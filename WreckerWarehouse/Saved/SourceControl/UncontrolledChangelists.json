@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/jakeh/Documents/GitHub/UnrealEngineDemos/WreckerWarehouse/Content/StarterContent/Blueprints/Blueprint_CeilingLight.uasset",
+				"C:/Users/jakeh/Documents/GitHub/UnrealEngineDemos/WreckerWarehouse/Content/StarterContent/Maps/StarterMap.umap",
+				"C:/Users/jakeh/Documents/GitHub/UnrealEngineDemos/WreckerWarehouse/Content/StarterContent/Maps/Minimal_Default.umap",
+				"C:/Users/jakeh/Documents/GitHub/UnrealEngineDemos/WreckerWarehouse/Content/StarterContent/Maps/BP_Projectile.uasset",
+				"C:/Users/jakeh/Documents/GitHub/UnrealEngineDemos/WreckerWarehouse/Content/BP_Projectile.uasset"
+			]
+		}
+	]
+}
