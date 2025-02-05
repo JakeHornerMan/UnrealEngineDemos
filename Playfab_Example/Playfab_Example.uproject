@@ -15,7 +15,10 @@
 		{
 			"Name": "Authentication",
 			"Type": "Runtime",
-			"LoadingPhase": "PostEngineInit"
+			"LoadingPhase": "PostEngineInit",
+			"AdditionalDependencies": [
+				"CoreUObject"
+			]
 		},
 		{
 			"Name": "TimezoneApi",

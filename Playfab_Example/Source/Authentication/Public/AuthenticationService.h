@@ -21,10 +21,11 @@ public:
 	FAuthenticationResponse OnFailure;
 
 
-	UFUNCTION(BlueprintCallable, meta=(BlueprintInternalUseOnly = "false"), Category="Authentication")
-	static UAuthenticationService* SignIn(const FString& Username);
+	UFUNCTION(BlueprintCallable, meta=(BlueprintInternalUseOnly = "false", WorldContext="WorldContextObject"), Category = "Authentication")
+	static UAuthenticationService* SignIn(UObject* WorldContextObject, const FString& Username);
 
 private:
+	UObject* _worldContextObject;
 	void LoginSuccess(const PlayFab::ClientModels::FLoginResult& Result);
 	void LoginError(const PlayFab::FPlayFabCppError& Result);
 };

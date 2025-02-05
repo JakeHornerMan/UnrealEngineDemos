@@ -10,6 +10,7 @@ public class Playfab_ExampleEditorTarget : TargetRules
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V5;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_5;
-		ExtraModuleNames.Add("Playfab_Example");
-	}
+		//ExtraModuleNames.Add("Playfab_Example");
+        ExtraModuleNames.AddRange(new string[] { "Playfab_Example", "Authentication" });
+    }
 }
