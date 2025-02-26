@@ -55,3 +55,101 @@ void AMyTestActor::CastingTestFunction()
 	}
 }
 
+void ArrayOperations()
+{
+    // Define a TArray
+    TArray<int32> Numbers = { 1, 2, 3, 4, 5 };
+
+    // Add a new element
+    Numbers.Add(6);
+
+    // Remove an element (removing value 3)
+    Numbers.Remove(3);
+
+    // Print all elements using UE_LOG
+    UE_LOG(LogTemp, Warning, TEXT("Array Elements:"));
+    for (int32 Num : Numbers)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("%d"), Num);
+    }
+
+    // Find an element (example: check if 4 exists)
+    if (Numbers.Contains(4))
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Number 4 is in the array."));
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Number 4 not found."));
+    }
+}
+
+void MapOperations()
+{
+    // Define a TMap (Key: int32, Value: FString)
+    TMap<int32, FString> PlayerScores;
+
+    // Add key-value pairs
+    PlayerScores.Add(1, TEXT("Alice"));
+    PlayerScores.Add(2, TEXT("Bob"));
+    PlayerScores.Add(3, TEXT("Charlie"));
+
+    // Modify a value (Change Bob's name)
+    PlayerScores[2] = TEXT("Bobby");
+
+    // Remove an element (Remove Charlie)
+    PlayerScores.Remove(3);
+
+    // Print all key-value pairs
+    UE_LOG(LogTemp, Warning, TEXT("Player Scores:"));
+    for (const TPair<int32, FString>& Pair : PlayerScores)
+    {
+        UE_LOG(LogTemp, Warning, TEXT("ID: %d, Name: %s"), Pair.Key, *Pair.Value);
+    }
+
+    // Check if a key exists (Check if player with ID 2 exists)
+    if (PlayerScores.Contains(2))
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Player with ID 2 exists: %s"), *PlayerScores[2]);
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("Player with ID 2 not found."));
+    }
+}
+
+//void ListOperationsWithPlayerScore()
+//{
+//    // Define a TDoubleLinkedList to store FPlayerScore
+//    TDoubleLinkedList<FPlayerScore> PlayerList;
+//
+//    // Add players to the list
+//    PlayerList.AddTail(FPlayerScore(TEXT("Alice"), 100));
+//    PlayerList.AddTail(FPlayerScore(TEXT("Bob"), 150));
+//    PlayerList.AddTail(FPlayerScore(TEXT("Charlie"), 200));
+//
+//    // Print all players in the list
+//    UE_LOG(LogTemp, Warning, TEXT("Player List:"));
+//    for (TDoubleLinkedList<FPlayerScore>::TIterator It(PlayerList.GetHead()); It; ++It)
+//    {
+//        UE_LOG(LogTemp, Warning, TEXT("Player: %s, Score: %d"), *It->PlayerName, It->PlayerScore);
+//    }
+//
+//    // Remove a player (e.g., remove Bob)
+//    for (TDoubleLinkedList<FPlayerScore>::TIterator It(PlayerList.GetHead()); It; ++It)
+//    {
+//        if (It->PlayerName == TEXT("Bob"))
+//        {
+//            PlayerList.RemoveNode(It.GetNode());
+//            break; // Break after removing to avoid iterator invalidation
+//        }
+//    }
+//
+//    // Print updated player list
+//    UE_LOG(LogTemp, Warning, TEXT("Updated Player List:"));
+//    for (TDoubleLinkedList<FPlayerScore>::TIterator It(PlayerList.GetHead()); It; ++It)
+//    {
+//        UE_LOG(LogTemp, Warning, TEXT("Player: %s, Score: %d"), *It->PlayerName, It->PlayerScore);
+//    }
+//}
+

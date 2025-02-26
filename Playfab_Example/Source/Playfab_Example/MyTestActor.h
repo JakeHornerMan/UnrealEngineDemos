@@ -53,3 +53,25 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 };
+
+
+USTRUCT(BlueprintType)
+struct FPlayerScore
+{
+	// Player Name
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
+	FString PlayerName;
+
+	// Player Score
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Player")
+	int32 PlayerScore;
+
+	// Constructor
+	FPlayerScore()
+		: PlayerName(TEXT("Unknown")), PlayerScore(0) {
+	}
+
+	FPlayerScore(FString Name, int32 Score)
+		: PlayerName(Name), PlayerScore(Score) {
+	}
+};
